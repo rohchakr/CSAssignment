@@ -1,0 +1,20 @@
+#chartArea {
+    height: 80vh;
+    width: 80vw;
+    border: 1px solid black;
+}
+
+.line {
+    fill: #f1ffa1;
+    stroke: none;
+}
+
+.lineBorder {
+    fill: none;
+    stroke: #778b00;
+}
+
+.points {
+    fill: #778b00;
+    stroke: none;
+}
