@@ -2,6 +2,13 @@ console.log(d3.version)
 
 const url = 'https://clarisights-users.s3.eu-central-1.amazonaws.com/frontend-assignment/1000+items+table+response.json'
 
+const rowsPerPage = 5
+const rowsToLoad = 10
+const svgViewPortHeight = 300
+const svgViewPortWidth = 500
+const gap = 10
+const lineChartHeight = svgViewPortHeight/rowsPerPage - gap
+const lineChartWidth = svgViewPortWidth/3 - gap
 // d3.json(url, {referrerPolicy: 'no-referrer-when-downgrade'})
 //     .then(response => drawViz(response.data))
 //     .catch(error => console.log(error))
@@ -16,10 +23,9 @@ const drawViz = data => {
 
 // Function to draw chart for individual campaigns
 const makeChart = data => {
-    const width = 500, height = 500
     const svg = d3.create("svg")
         .attr("id", "chartArea")
-        .attr("viewBox", [0, 0, width, height])
+        .attr("viewBox", [0, 0, svgViewPortWidth, svgViewPortHeight])
 
     makeCampaigns(data, svg)
 
@@ -28,18 +34,22 @@ const makeChart = data => {
 
 const makeCampaigns = (data, svg) => {
     const campaignData = data
-    makeCampaign(campaignData[0], svg, 0)
-    makeCampaign(campaignData[1], svg, 80)
-    makeCampaign(campaignData[0], svg, 160)
+    console.log(svg)
+    const yStep = svgViewPortHeight/rowsPerPage;
+    for (let i = 0; i < rowsToLoad; i++) {
+        makeCampaign(campaignData[0], svg, i*yStep)
+    }
 }
 
 const makeCampaign = (campaignData, svg, y) => {
     const campaignName = campaignData.groups.Campaign.metadata.name
     const acqData = campaignData.trend.map(t => t.aj_coh_0w_and_real_acquisition)
     const instData = campaignData.trend.map(t => t.aj_app_and_installs)
-    makeNameTile(campaignName, svg, 0, y, 'Name')
-    makeLineChart(acqData, svg, 150, y, 'Acq')
-    makeLineChart(instData, svg, 300, y, 'Inst')
+    const xStep = svgViewPortWidth/3
+    const extraSpace = gap / 2
+    makeNameTile(campaignName, svg, extraSpace, y + extraSpace, 'Name')
+    makeLineChart(acqData, svg, xStep - extraSpace, y + extraSpace, 'Acq')
+    makeLineChart(instData, svg, xStep*2 - extraSpace, y + extraSpace, 'Inst')
 }
 
 const makeNameTile = (data, svg, x, y, type) => {
@@ -49,9 +59,14 @@ const makeNameTile = (data, svg, x, y, type) => {
         .attr('x', x)
         .attr('y', y)
 
+    group.append('rect')
+        .attr('class', 'namePlate')
+        .attr('width', lineChartWidth)
+        .attr('height', lineChartHeight)
+
     group.append('text')
         .attr('class', 'nameText')
-        // .attr('x', 0)
+        .attr('x', 5)
         .attr('y', 10)
         // .attr("alignment-baseline","middle")
         // .attr("fill","grey")
@@ -69,11 +84,8 @@ const makeLineChart = (data, svg, x, y, type) => {
     
         // const svg = d3.select("#content").append("svg").attr("id","chartArea").attr("height",500).attr("width",500)
     
-    const lineChartHeight = 50;
-    const lineChartWidth = 150;
-    
     const xScale = d3.scaleLinear().domain([0, data.length - 1]).range([0, lineChartWidth])
-    const yScale = d3.scaleLinear().domain([0, maxData]).range([0, lineChartHeight])
+    const yScale = d3.scaleLinear().domain([0, maxData]).range([2, lineChartHeight - 2])
     
     const lineGenerator = d3.line()
         .x((d, i) => {
@@ -81,13 +93,13 @@ const makeLineChart = (data, svg, x, y, type) => {
             return xScale(i) + 10
         })
         .y((d) => {
-            return lineChartHeight - yScale(d) + 10
+            return lineChartHeight - yScale(d)
         })
         .curve(d3.curveMonotoneX)
         // .curve(d3.curveLinear)
     
     const pathAttr = lineGenerator(data)
-    const pathAttrSuffix = " L " + (lineChartWidth + 10) + " " + (lineChartHeight + 10) + " L 10 " + (lineChartHeight + 10) + " Z" 
+    const pathAttrSuffix = " L " + (lineChartWidth + 10) + " " + (lineChartHeight) + " L 10 " + (lineChartHeight) + " Z" 
     
     group.append("path")
         .attr("class", "line" + type)
@@ -104,9 +116,8 @@ const makeLineChart = (data, svg, x, y, type) => {
             .attr("class", "points points" + type)
             .attr("r", 2)
             .attr("cx", (d, i) => xScale(i) + 10)
-            .attr("cy", (d) => lineChartHeight - yScale(d) + 10)
+            .attr("cy", (d) => lineChartHeight - yScale(d))
 
 }
 
 drawViz(jsonData)
-

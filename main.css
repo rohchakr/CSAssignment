@@ -3,6 +3,7 @@
     /* width: 80vw; */
     border: 1px solid black;
     /* padding: 5px; */
+    overflow: scroll;
 }
 /* 
 #chartArea > svg {
@@ -42,4 +43,8 @@
 .nameText {
     fill: #007a8a;
     font: 6.5px Monospace;
+}
+
+.namePlate {
+    fill: #e0e6e5;
 }
