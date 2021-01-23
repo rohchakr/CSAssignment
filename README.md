@@ -18,5 +18,6 @@ Pagination
 As the user scrolls, load the rows progressively.
 
 ### Branches
-`plain` - The initial html implementation
-`master` - React.js app
+- `plain` - The initial html implementation
+- `react` - Source code of the react app
+- `master` - Public artifacts
