@@ -1,20 +1,45 @@
 #chartArea {
-    height: 80vh;
-    width: 80vw;
+    /* height: 80vh; */
+    /* width: 80vw; */
     border: 1px solid black;
+    /* padding: 5px; */
 }
+/* 
+#chartArea > svg {
+    border: 1px solid black;
+} */
 
-.line {
+.lineAcq {
     fill: #f1ffa1;
     stroke: none;
 }
 
-.lineBorder {
+.lineBorderAcq {
     fill: none;
     stroke: #778b00;
 }
 
-.points {
+.pointsAcq {
     fill: #778b00;
     stroke: none;
+}
+
+.lineInst {
+    fill: #ffdea1;
+    stroke: none;
+}
+
+.lineBorderInst {
+    fill: none;
+    stroke: #8b4a00;
+}
+
+.pointsInst {
+    fill: #8b4a00;
+    stroke: none;
+}
+
+.nameText {
+    fill: #007a8a;
+    font: 6.5px Monospace;
 }
