@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/ClarisightsAssignment/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/ClarisightsAssignment/static/js/main.4c27e33e.chunk.js",
-    "main.js.map": "/ClarisightsAssignment/static/js/main.4c27e33e.chunk.js.map",
-    "runtime-main.js": "/ClarisightsAssignment/static/js/runtime-main.d800202a.js",
-    "runtime-main.js.map": "/ClarisightsAssignment/static/js/runtime-main.d800202a.js.map",
-    "static/js/2.5ad3acf0.chunk.js": "/ClarisightsAssignment/static/js/2.5ad3acf0.chunk.js",
-    "static/js/2.5ad3acf0.chunk.js.map": "/ClarisightsAssignment/static/js/2.5ad3acf0.chunk.js.map",
-    "static/js/3.6028984c.chunk.js": "/ClarisightsAssignment/static/js/3.6028984c.chunk.js",
-    "static/js/3.6028984c.chunk.js.map": "/ClarisightsAssignment/static/js/3.6028984c.chunk.js.map",
+    "main.css": "/ClarisightsAssignment/static/css/main.693e9d6f.chunk.css",
+    "main.js": "/ClarisightsAssignment/static/js/main.9436c2bc.chunk.js",
+    "main.js.map": "/ClarisightsAssignment/static/js/main.9436c2bc.chunk.js.map",
+    "runtime-main.js": "/ClarisightsAssignment/static/js/runtime-main.5886bab1.js",
+    "runtime-main.js.map": "/ClarisightsAssignment/static/js/runtime-main.5886bab1.js.map",
+    "static/js/2.35d28954.chunk.js": "/ClarisightsAssignment/static/js/2.35d28954.chunk.js",
+    "static/js/2.35d28954.chunk.js.map": "/ClarisightsAssignment/static/js/2.35d28954.chunk.js.map",
+    "static/js/3.b7c3e2e1.chunk.js": "/ClarisightsAssignment/static/js/3.b7c3e2e1.chunk.js",
+    "static/js/3.b7c3e2e1.chunk.js.map": "/ClarisightsAssignment/static/js/3.b7c3e2e1.chunk.js.map",
     "index.html": "/ClarisightsAssignment/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/ClarisightsAssignment/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.5ad3acf0.chunk.js.LICENSE.txt": "/ClarisightsAssignment/static/js/2.5ad3acf0.chunk.js.LICENSE.txt"
+    "static/css/main.693e9d6f.chunk.css.map": "/ClarisightsAssignment/static/css/main.693e9d6f.chunk.css.map",
+    "static/js/2.35d28954.chunk.js.LICENSE.txt": "/ClarisightsAssignment/static/js/2.35d28954.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d800202a.js",
-    "static/js/2.5ad3acf0.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.4c27e33e.chunk.js"
+    "static/js/runtime-main.5886bab1.js",
+    "static/js/2.35d28954.chunk.js",
+    "static/css/main.693e9d6f.chunk.css",
+    "static/js/main.9436c2bc.chunk.js"
   ]
 }
