@@ -1,4 +1,4 @@
-# ClarisightsAssignment
+# CSAssignment
 
 See it working [here](https://rohchakr.github.io/ClarisightsAssignment).
 
